@@ -1,4 +1,8 @@
 body {
   padding: 10px;
-  font-family: sans-serif;
+  font-family: 'fira-sans';
+}
+
+h1 {
+  text-align: center;
 }
