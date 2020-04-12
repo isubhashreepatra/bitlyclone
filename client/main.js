@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import Header from './components/header';
-import ShortenURL from './components/link_create';
+import ShortenURL from './components/shorten_url';
 import LinkList from './components/link_list';
 
 import { Links } from '../imports/collections/links';

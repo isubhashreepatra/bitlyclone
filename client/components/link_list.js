@@ -2,26 +2,9 @@ import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 
 import { Links } from '../../imports/collections/links';
+import RowDisplay from './row_display';
 
 class LinkList extends Component {
-
-  renderRows() {
-    var linkCollection = this.props.links;
-
-    return linkCollection.map(item => {
-      const shortURL = `http://localhost:3000/${item.token}`;
-      return (
-        <tr>
-          <td>{item.url}</td>
-          <td>
-            <a href={ shortURL }>{ shortURL }</a>
-          </td>
-          <td>{item.clicks}</td>
-        </tr>
-      );
-    });
-  }
-
   render() {
     return(
         <div>
@@ -34,7 +17,9 @@ class LinkList extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.renderRows()}
+              {this.props.links.map(item =>
+                <RowDisplay row={item} key={item._id}/>
+              )}
             </tbody>
           </table>
         </div>
